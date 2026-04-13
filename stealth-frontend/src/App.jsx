@@ -5,8 +5,10 @@ import {
   ChevronRight, ChevronDown, Plus, MessageSquare, MoreHorizontal, Cloud, RefreshCw
 } from 'lucide-react';
 
+const backendUrl = (import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000').trim();
+
 // Connect silently in the background as soon as the app opens
-const socket = io('http://localhost:5000', { autoConnect: true });
+const socket = io(backendUrl, { autoConnect: true });
 
 const DEFAULT_FILE_SYSTEM = [
   {
